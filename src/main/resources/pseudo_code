@@ -1,0 +1,41 @@
+câu 1: thuật toán tìm kiếm tuyến tính -> duyệt từng phần của mảng
+        B1: Bắt đầu từ phần tử đầu bên trái (hoặc phải) của mảng và so sánh từng phần tử trong mảng với phần tử cần tìm
+        B2: Nếu phần tử nào trùng với phần tử cần tìm -> return index giá trị đó
+        B3: Nếu không có phần tử nào trùng thì trả về -1
+
+        function linearSearch(A,x)
+            for i=0 to length(A)-1
+                if A[i]==x return i
+            return -1
+
+
+câu 2: thuật toán sắp xếp chèn -> xem phần đầu mảng là đã sắp xếp và chèn từng phần tử tiếp vào đúng vị trí
+        B1: Xem phần tử tại index 0 là đã sắp xếp
+        B2: Lấy ra phần tử kế tiếp
+        B3: So sánh với tất cả phần tử trong danh sách con đã qua sắp xếp
+        B4: Dịch chuyển tất cả phần tử trong danh sách con > giá trị đang được sắp xếp lùi lại 1 vị trí
+        B5: Chèn giá trị đang sắp xếp vào vị trí đó
+        B6: Lặp lại cho tới khi danh sách được sắp xếp (theo chiều từ nhỏ tới lớn)
+        Note: Nếu sắp xếp theo chiều từ lớn về nhỏ thì ở B4 cần so sánh "<"
+
+        procedure insertionSort(A)
+            for i = 1 to length(A) - 1
+                key = A[i]
+                j = i
+                while j > 0 and A[j] > key
+                    A[j] = A[j-1]
+                    j = j - 1
+                A[j + 1] = key
+
+câu 3: thuật toán đệ quy giải bài toán tính giai thừa -> đệ quy: gọi lại chính hàm bản thân đang ở trong đó
+        Ta có thể định nghĩa đệ quy (quy nạp) n! như sau:
+              0! = 1
+              n! = n . (n - 1)!   với n>0
+        Ví dụ: 4! = 4.3! = 4.3.2! = 24
+
+        function factorial(n)
+            if n == 0
+                return 1
+            return n * factorial(n - 1)
+
+
